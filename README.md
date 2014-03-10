@@ -27,8 +27,6 @@ Or get someone to host a package for your distro.
 
 ## Example
 
-**Caveat:** there currently seems to be a bug in Gjs that is preventing some of the ipc replies from working correctly. Accessing a string property may crash your script. I don't believe the issue is with the ipc library. Events and window trees should be working fine.
-
 ```JavaScript
 #!/usr/bin/env gjs
 
@@ -46,7 +44,7 @@ print('Active outputs:');
 
 outputs.forEach(function(o, i) {
     if (o.active)
-        print("Output " + i + "");
+        print(o.name);
 });
 
 // Send a command to be executed synchronously.
