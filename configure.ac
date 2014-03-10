@@ -8,7 +8,7 @@ AC_CONFIG_MACRO_DIR([build/autotools])
 
 AM_INIT_AUTOMAKE([-Wall -Werror foreign -Wno-portability])
 
-PKG_CHECK_MODULES([I3IPC], [i3ipc-glib-1.0])
+PKG_CHECK_MODULES([I3IPC], [i3ipc-glib-1.0 >= 0.1])
 PKG_CHECK_MODULES([GJS], [gjs-1.0])
 
 AC_ARG_WITH([gjs_overrides_dir],
