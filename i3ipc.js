@@ -10,6 +10,9 @@ function _init() {
     
     i3ipc.Connection.prototype.main = function() {
         let main_loop = new GLib.MainLoop(null, false);
-        main_loop.run()
+        this.connect("ipc_shutdown", function() {
+            main_loop.quit();
+        });
+        main_loop.run();
     };
 }
