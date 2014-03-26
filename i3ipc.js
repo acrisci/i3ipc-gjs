@@ -16,9 +16,7 @@ function _init() {
         main_loop.run();
     };
 
-    // Unfortunately, we have to implement some of the Connection methods
-    // manually because of some bugs in Gjs (but this is way faster so let's go
-    // with it).
+    // These overrides are a lot faster and should give the same result:
 
     i3ipc.Connection.prototype.command = function(payload) {
         let reply = this.message(i3ipc.MessageType.COMMAND, payload);
